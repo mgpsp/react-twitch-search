@@ -1,0 +1,11 @@
+@import "_colors";
+
+body {
+    background-color: $light-grey;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.app-container {
+    width: 70%;
+    margin: 0 auto;
+}
