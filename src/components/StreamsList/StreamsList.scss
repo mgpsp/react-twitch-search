@@ -1,7 +1,18 @@
 .streams-list-container {
-    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    justify-content: space-between;
+    flex-direction: column;
+
+    .streams-list-row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    .error, .no-results {
+        font-size: 20px;
+        margin: 0 auto;
+        padding: 20px 0 20px 0;
+    }
 }

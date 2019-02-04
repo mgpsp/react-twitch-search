@@ -1,0 +1,87 @@
+@import "../../common/_colors";
+
+.stream-tile-container {
+    flex-basis: 25%;
+    -ms-flex: auto;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    min-width: 0;
+
+    img {
+        border-radius: 2px;
+    }
+    
+    .stream-thumbnail {
+        width: 100%;
+        align-self: flex-start;
+        flex: 0 0 auto;
+    }
+
+    .stream-details {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        align-self: flex-start;
+        flex: 0 0 auto;
+        min-width: 0;
+
+        .channel-logo {
+            width: 40px;
+            align-self: flex-start;
+            flex: auto;
+            margin-right: 10px;
+        }
+
+        .stream-summary {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-width: 0;
+
+            .title {
+                font-weight: 600;
+                font-size: 14px;
+                margin: 0;
+                padding-bottom: 2px;
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .channel-name, .game, .language {
+                font-size: 12px;
+                padding: 3px 0 3px 0;
+                text-decoration: none;
+                color: black;
+                transition: all .2s;
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .channel-name:hover, .game:hover {
+                color: $dark-magenta;
+            }
+        }
+    }
+}
+
+@media(max-width: 1400px) {
+    .stream-tile-container {
+        flex-basis: 33.3%;
+    }
+}
+
+@media(max-width: 1100px) {
+    .stream-tile-container {
+        flex-basis: 50%;
+    }
+}
+
+@media(max-width: 650px) {
+    .stream-tile-container {
+        flex-basis: 100%;
+    }
+}

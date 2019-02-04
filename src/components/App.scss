@@ -1,4 +1,4 @@
-@import "_colors";
+@import "./common/_colors";
 
 body {
     background-color: $light-grey;
@@ -8,4 +8,70 @@ body {
 .app-container {
     width: 70%;
     margin: 0 auto;
+
+    .pagination-container {
+        display: flex;
+
+        ul.pagination {
+            list-style: none;
+            margin: 0 auto;
+            padding: 25px 0 25px 0;
+
+            .first-item {
+                border-radius: 2px 0 0 2px;
+            }
+
+            .last-item {
+                border-radius: 0 2px 2px 0;
+                border-right: 1px solid $grey;
+            }
+    
+            .pagination-item {
+                display: inline;
+                padding: 7px 14px 7px 14px;
+                background-color: white;
+                border-bottom: 1px solid $grey;
+                border-top: 1px solid $grey;
+                border-left: 1px solid $grey;
+                font-size: 14px;
+                transition: all 0.2s;
+    
+                a {
+                    text-decoration: none;
+                    color: $dark-grey;
+                    transition: all 0.2s;
+                }
+            }
+
+            .pagination-item.active {
+                background-color: $dark-magenta;
+                border: 1px solid $dark-magenta;
+
+                a {
+                    color: white;
+                }
+            }
+
+            .pagination-item.active + li {
+                border-left: none;
+            }
+
+            .pagination-item.active {
+                background-color: $dark-magenta;
+                border-color: $dark-magenta;
+
+                a {
+                    color: white;
+                }
+            }
+
+            .pagination-item:not(.active):hover {
+                cursor: pointer;
+
+                a {
+                    color: $dark-magenta;
+                }
+            }
+        }
+    }
 }

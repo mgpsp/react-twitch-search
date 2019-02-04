@@ -1,0 +1,19 @@
+.streams-list-header-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .header-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .results {
+        display: flex;
+        padding-top: 10px;
+
+        .results-info {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './SearchBar.scss';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./SearchBar.scss";
 
 class SearchBar extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            searchValue: '',
+            searchValue: "",
         };
     }
 
@@ -20,7 +20,10 @@ class SearchBar extends Component {
 
         const { searchStreams } = this.props;
         const { searchValue } = this.state;
-        searchStreams(searchValue);
+
+        if (searchStreams && searchValue !== "") {
+            searchStreams(searchValue);
+        }
     }
 
     render() {
@@ -36,7 +39,9 @@ class SearchBar extends Component {
                         onChange={this.handleChange}
                         placeholder="Search streams..."
                     />
-                    <img className="search-icon" src="src/images/search-icon.svg" alt="Search icon" />
+                    <button type="button" className="search-button" onClick={this.handleSubmit}>
+                        <img className="search-icon" src="src/images/search-icon.svg" alt="Search icon" />
+                    </button>
                 </div>
             </form>
         );

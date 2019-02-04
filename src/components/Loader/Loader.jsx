@@ -1,23 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Loader.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import "./Loader.scss";
 
 const Loader = (props) => {
-    const { size } = props;
+    const { size, type } = props;
 
     return (
-        <div className="loader-container">
-            <img className={"loader" + (size ? " " + size : "")} src="src/images/loader.svg" alt="Loading" />
+        <div className={"loader-container" + (size ? " " + size : "")}>
+            <img src={"src/images/" + type + ".svg"} alt="Loading" />
         </div>
     );
 };
 
 Loader.propTypes = {
     size: PropTypes.string,
+    type: PropTypes.string,
 };
 
 Loader.defaultProps = {
-    size: 'medium',
+    size: "medium",
+    type: "loader",
 };
 
 export default Loader;
